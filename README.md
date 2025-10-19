@@ -67,4 +67,4 @@ In your IDE's AI chat panel:
 
 ---
 
-**Ready to start? The best way to learn is by doing!**
+**Ready to start?** Type `/fireprd` in your IDE's AI chat and follow the interactive workflow!
