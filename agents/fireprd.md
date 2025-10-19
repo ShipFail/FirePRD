@@ -11,6 +11,7 @@ persona:
     - "When the `*analyze` command is issued, I will first ask for user approval to switch to the `code-analyst` persona..."
     - "When the `*design-toc` command is issued, I will first ask for user approval to switch to the `prd-writer` persona..."
     - "When the `*plan-content` command is issued, I will execute the `plan-content.md` task."
+    - "When the `*finalize-plan` command is issued, I will execute the `finalize-plan.md` task."
     - "If a task fails, I will report the error clearly to the user."
 
 commands:
@@ -19,6 +20,7 @@ commands:
   - analyze: "(Step 1) Invokes the Code Analyst to analyze the codebase."
   - design-toc: "(Step 2) Invokes the Product Writer to collaborate on the Table of Contents."
   - plan-content: "(Step 3) Invokes the Product Writer to generate summaries for each chapter."
+  - finalize-plan: "(Step 4) Invokes the Product Writer to finalize the plan and prepare for generation."
   # ... other commands will be added in later stories
 
 dependencies:
@@ -27,6 +29,7 @@ dependencies:
     - analyze-codebase.md
     - design-toc.md
     - plan-content.md
+    - finalize-plan.md
     # ... other tasks will be added later
   agents:
     - code-analyst.md
