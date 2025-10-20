@@ -5,7 +5,7 @@ To analyze a source code directory and generate a structured `code-analysis.md` 
 
 ## Process
 
-1.  **Read State:** Read the `sourcePath` from the `fireprd/cache/workflow-state.yaml` file. If the path is invalid or not found, report an error and halt.
+1.  **Read State:** Read the `sourcePath` from the `fireprd/cache/workflow-state.toml` file. If the path is invalid or not found, report an error and halt.
 
 2.  **Traverse Filesystem:** Traverse the file system at the `sourcePath`. Read the content of all relevant source files (e.g., `.ts`, `.tsx`, `.js`, `.py`, etc.). You must ignore common dependency/build directories (`node_modules`, `.git`, `dist`, `build`) and respect any `.gitignore` file present in the `sourcePath`.
 
@@ -48,4 +48,4 @@ To analyze a source code directory and generate a structured `code-analysis.md` 
 
 5.  **Validate Artifact:** Perform a sanity check on the created file. Verify it is valid markdown and contains at least the `## Inferred Features` heading. If the check fails, this task has failed.
 
-6.  **Update State:** Upon successful creation and validation of the artifact, update the `fireprd/cache/workflow-state.yaml` file. Set `status` to `ANALYSIS_COMPLETE`, set `artifacts.codeAnalysis` to the file's path, and set `nextStep` to `design-toc`.
+6.  **Update State:** Upon successful creation and validation of the artifact, update the `fireprd/cache/workflow-state.toml` file. Set `status` to `"ANALYSIS_COMPLETE"`, set `artifacts.codeAnalysis` to the file's path, and set `nextStep` to `"design-toc"`.

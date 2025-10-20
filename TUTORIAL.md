@@ -33,7 +33,7 @@ Now, let's start a new session. We'll tell FirePRD to analyze the code in the cu
 *start .
 `
 
-The agent will confirm that it has created a `workflow-state.yaml` file. This file is its memory.
+The agent will confirm that it has created a `workflow-state.toml` file. This file is its memory.
 
 #### **Step 2: Analyze the Codebase**
 
@@ -107,7 +107,7 @@ The agent will now write all the files for your PRD into the `fireprd/` director
     After you have a finalized plan (after `*finalize-plan`), you can speed up generation. Open multiple chat panels, activate `/fireprd` in each, and run `*generate-chapter ch_1`, `*generate-chapter ch_2`, etc., in parallel.
 
 * **How to manually edit the plan?**
-    The `workflow-state.yaml` and `toc.md` files are human-readable. You can open them and make manual edits. For example, you can directly edit `toc.md` after it's created and before running `*plan-content`.
+    The `workflow-state.toml` and `toc.md` files are human-readable. You can open them and make manual edits. For example, you can directly edit `toc.md` after it's created and before running `*plan-content`.
 
 ---
 
@@ -119,7 +119,7 @@ The agent will now write all the files for your PRD into the `fireprd/` director
 * **Why the mandatory approval for persona-switching?**
     This is a core principle of the BMAD (Bob-Made Agent Design) method. It ensures the user is always in control and aware of the agent's internal state. It makes the agent's behavior predictable and builds user trust.
 
-* **Why is the state file (`workflow-state.yaml`) so important?**
+* **Why is the state file (`workflow-state.toml`) so important?**
     It turns the agent from a simple conversationalist into a robust application. It provides memory, enables the workflow to be resumable across sessions, and is the key to advanced features like concurrent generation.
 
 ---

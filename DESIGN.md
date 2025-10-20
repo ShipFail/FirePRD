@@ -82,7 +82,7 @@ This architecture ensures the process is **robust** (state is saved to a file, m
 2. **Architectural Proposal v3 (Command-and-Control):**  
    * **User Feedback:** "Persona switching should be confirmed by the user. Our orchestrator needs to list all steps, and one step at a time." This feedback was the catalyst for the final architecture.  
    * **Redesign:** The workflow was fundamentally redesigned from an autonomous sequence into a **user-directed pipeline**. The orchestrator's new role was to present a clear, numbered plan to the user and then **wait**. The user, not the agent, would be responsible for initiating each step with an explicit command like \*run-step 1\.  
-   * **Key Innovation:** The concept of a persistent **state file** (workflow-state.json) was introduced. This was the technical solution that made the step-by-step model possible. It would act as the agent's memory, tracking which steps were complete and what the next logical step was, making the entire process resumable and robust.  
+   * **Key Innovation:** The concept of a persistent **state file** (workflow-state.toml) was introduced. This was the technical solution that made the step-by-step model possible. It would act as the agent's memory, tracking which steps were complete and what the next logical step was, making the entire process resumable and robust.  
 3. **Architectural Proposal v4 (State-Driven Pipeline):**  
    * **User Feedback:** "Semantic commands would be better."  
    * **Redesign:** This was a refinement of the v3 model. The generic \*run-step \<number\> command was replaced with a set of clear, memorable, and semantic commands like \*analyze, \*design-toc, etc. This made the agent's command-line interface feel more like a professional tool. The \*next command was also introduced as a convenient alias, providing a simple way to proceed without having to remember the specific command for each step.
@@ -98,7 +98,7 @@ This architecture ensures the process is **robust** (state is saved to a file, m
 1. **Final Architectural Polish (v5):**  
    * **User Feedback:** We made two final but important refinements:  
      1. The main agent was renamed from fireprd-orchestrator to simply fireprd for better branding and simplicity.  
-     2. The state file was switched from JSON to YAML to improve human readability, acknowledging that the operator might need to inspect or even manually edit it.  
+     2. The state file was switched from JSON to TOML to improve human readability, AI editing robustness, and eliminate whitespace-sensitive formatting errors.  
    * **The Final Blueprint:** With these changes, the v5 architecture was finalized and approved, incorporating all previous feedback into a cohesive and robust design.  
 2. **Meta-Project Kickoff:** We made a conscious decision to transition our work from a free-form design discussion to a structured project. We decided to "dogfood" the BMAD methodology by using its own agents to formally document the FirePRD project we had just designed.  
 3. **PRD** Creation **(As the Product Manager):**  

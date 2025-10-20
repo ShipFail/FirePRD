@@ -6,7 +6,7 @@ This document defines the technical architecture for the FirePRD agentic framewo
 
 ### Guiding Principles
 * **Pure Prompt Framework:** The system is a library of natural language prompts.
-* **Stateful & Resumable:** The workflow is managed via a persistent state file (`workflow-state.yaml`).
+* **Stateful & Resumable:** The workflow is managed via a persistent state file (`workflow-state.toml`).
 * **User-Directed:** An orchestrator agent guides the user, who initiates every major step.
 * **Specialized Agents:** A primary orchestrator adopts specialist personas for specific tasks.
 
@@ -24,7 +24,7 @@ subgraph User_Commands["User Commands"]
 
   subgraph FirePRD_Agent["FirePRD Agent (Internal Workflow)"]
     C["fireprd Agent Orchestrator"]
-    Z["workflow-state.yaml"]
+    Z["workflow-state.toml"]
     H["Creates code-analysis.md"]
     L["Collaborates with User & Generates PRD"]
 
@@ -44,11 +44,11 @@ subgraph User_Commands["User Commands"]
 
 ## 2. Component Specifications: Agents, Tasks, & State
 
-### 2.1 The State File (`workflow-state.yaml`)
+### 2.1 The State File (`workflow-state.toml`)
 
   * **Responsibility:** To persist the state of the PRD generation process.
-  * **Format:** YAML
-  * **Location:** `fireprd/cache/workflow-state.yaml`
+  * **Format:** TOML
+  * **Location:** `fireprd/cache/workflow-state.toml`
   * **Schema:** Defines `status`, `sourcePath`, `nextStep`, `artifacts`, and `plan`.
 
 ### 2.2 The Agents (Personas)
