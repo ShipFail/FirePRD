@@ -1,5 +1,6 @@
 # agents/fireprd.md
 
+```yaml
 agent:
   id: fireprd
   title: FirePRD Document Generator
@@ -36,3 +37,4 @@ dependencies:
   agents:
     - code-analyst.md
     - prd-writer.md
+```
