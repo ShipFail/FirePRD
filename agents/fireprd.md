@@ -1,6 +1,4 @@
-# agents/fireprd.md
-
-```yaml
+---
 agent:
   id: fireprd
   title: FirePRD Document Generator
@@ -21,8 +19,8 @@ commands:
   - design-toc: "(Step 2) Invokes the Product Writer to collaborate on the Table of Contents."
   - plan-content: "(Step 3) Invokes the Product Writer to generate summaries for each chapter."
   - finalize-plan: "(Step 4) Invokes the Product Writer to finalize the plan and prepare for generation."
-  - generate-all-chapters: "(Step 5) Sequentially generates all chapters."
-  - generate-chapter <id>: "Generates a single chapter, enabling concurrent generation."
+  - generate-all-chapters: "(Step 5) Runs the generate-content task over all pending items in plan.generationQueue."
+  - generate-chapter <id>: "Runs the same generate-content task but filters to a single job by id (for parallel workflows)."
   - next: "An alias for the next logical command in the workflow."
   - reset: "Resets the workflow, allowing the user to start over."
 
@@ -37,4 +35,6 @@ dependencies:
   agents:
     - code-analyst.md
     - prd-writer.md
-```
+---
+
+# agents/fireprd.md

@@ -21,5 +21,12 @@ To create and initialize the `workflow-state.yaml` file, which acts as the singl
     plan:
       toc: []
       generationQueue: []
+    settings:
+      # Max files per feature before a chapter is marked for splitting in finalize-plan
+      splitThreshold: 5
     ```
 5.  **Confirmation:** After successfully writing the file, the task is complete.
+
+## Notes
+- This task generates a runtime file at `fireprd/cache/workflow-state.yaml`. Do not commit runtime state.
+- For the full schema/example, see `fireprd/templates/workflow-state.example.yaml`.

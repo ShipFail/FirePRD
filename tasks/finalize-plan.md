@@ -8,12 +8,13 @@ To present the complete, summarized PRD plan to the user for final approval, app
 1.  **Read Artifacts:**
     * Read the `fireprd/cache/workflow-state.yaml` to get the paths for `content-plan.md` and `code-analysis.md`.
     * Load and parse both of these artifact files.
+    * Read `settings.splitThreshold` from the state; default to `5` if not set.
 
 2.  **Apply Hierarchy Rule:**
     * Iterate through each chapter in the `content-plan.md`.
     * For each chapter, find its corresponding feature in `code-analysis.md`.
     * Count the number of `source_files` listed for that feature.
-    * **If the count exceeds 5**, mark this chapter for splitting and add a note to its presentation string.
+    * **If the count exceeds `splitThreshold`**, mark this chapter for splitting and add a note to its presentation string.
 
 3.  **Present Final Plan for Approval:**
     * Display the full Table of Contents, including the summaries from `content-plan.md`.

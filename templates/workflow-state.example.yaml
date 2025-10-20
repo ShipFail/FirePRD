@@ -1,0 +1,38 @@
+# Example/schema for the FirePRD workflow state file.
+#
+# Runtime note:
+#   This file is NOT used directly by the workflow. At runtime, the
+#   `*start` command (see tasks/initialize-workflow.md) generates
+#   `fireprd/cache/workflow-state.yaml` for the active project.
+#
+# Usage:
+#   - Use this file as a reference for expected fields and types.
+#   - Do not commit runtime state under fireprd/cache/ in your projects.
+
+# The version of the state file schema.
+version: 1.0 
+
+# The current stage of the workflow. 
+# Possible values: NOT_STARTED, PLAN_CREATED, ANALYSIS_COMPLETE, TOC_APPROVED, CONTENT_PLAN_COMPLETE, PLAN_FINALIZED, GENERATION_COMPLETE
+status: String
+
+# The root path to the source code being analyzed.
+sourcePath: String
+
+# The semantic command for the next logical step.
+nextStep: String
+
+# File paths to the intermediate documents generated during the workflow.
+artifacts:
+  codeAnalysis: String
+  toc: String
+  contentPlan: String
+
+# The user-approved plan for the final document.
+plan:
+  # The final, approved Table of Contents structure.
+  toc: Array<Part> 
+  
+  # A queue of generation jobs, populated after the plan is finalized.
+  # Enables sequential and concurrent generation.
+  generationQueue: Array<GenerationJob>
