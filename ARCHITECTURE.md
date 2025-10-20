@@ -11,6 +11,7 @@ This document defines the technical architecture for the FirePRD agentic framewo
 * **Specialized Agents:** A primary orchestrator adopts specialist personas for specific tasks.
 
 ### High-Level System Design: The Orchestrated Pipeline
+
 The system uses an Orchestrator-led, three-agent model that separates technical analysis from user-centric writing.
 
 ```mermaid
