@@ -33,9 +33,9 @@ dependencies:
     - plan-content.md
     - finalize-plan.md
     - generate-content.md
-  - status.md
-  - reset.md
-  - set-split-threshold.md
+    - status.md
+    - reset.md
+    - set-split-threshold.md
   agents:
     - code-analyst.md
     - prd-writer.md
