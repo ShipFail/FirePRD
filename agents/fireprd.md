@@ -21,8 +21,9 @@ commands:
   - finalize-plan: "(Step 4) Invokes the Product Writer to finalize the plan and prepare for generation."
   - generate-all-chapters: "(Step 5) Runs the generate-content task over all pending items in plan.generationQueue."
   - generate-chapter <id>: "Runs the same generate-content task but filters to a single job by id (for parallel workflows)."
+  - set split-threshold <n>: "Sets `settings.splitThreshold` in the workflow state to control when chapters are split (applied at finalize-plan)."
   - next: "An alias for the next logical command in the workflow."
-  - reset: "Resets the workflow, allowing the user to start over."
+  - reset [--hard]: "Resets the workflow. Without flags, clears cache only. With --hard, also deletes generated PRD outputs (requires confirmation)."
 
 dependencies:
   tasks:
@@ -32,6 +33,9 @@ dependencies:
     - plan-content.md
     - finalize-plan.md
     - generate-content.md
+  - status.md
+  - reset.md
+  - set-split-threshold.md
   agents:
     - code-analyst.md
     - prd-writer.md

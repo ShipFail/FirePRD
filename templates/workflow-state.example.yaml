@@ -12,8 +12,15 @@
 # The version of the state file schema.
 version: 1.0 
 
-# The current stage of the workflow. 
-# Possible values: NOT_STARTED, PLAN_CREATED, ANALYSIS_COMPLETE, TOC_APPROVED, CONTENT_PLAN_COMPLETE, PLAN_FINALIZED, GENERATION_COMPLETE
+# The current stage of the workflow.
+# Possible values:
+#   - NOT_STARTED
+#   - PLAN_CREATED
+#   - ANALYSIS_COMPLETE
+#   - TOC_APPROVED
+#   - CONTENT_PLAN_COMPLETE
+#   - PLAN_FINALIZED
+#   - GENERATION_COMPLETE
 status: String
 
 # The root path to the source code being analyzed.
@@ -36,3 +43,9 @@ plan:
   # A queue of generation jobs, populated after the plan is finalized.
   # Enables sequential and concurrent generation.
   generationQueue: Array<GenerationJob>
+
+# User-configurable settings that affect downstream tasks.
+settings:
+  # Max files per feature before a chapter is marked for splitting in finalize-plan.
+  # Integer; typical range 3-10; default 5.
+  splitThreshold: Number

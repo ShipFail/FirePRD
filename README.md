@@ -76,6 +76,9 @@ In your IDE's AI chat panel:
 1.  Type `/fireprd` to activate the agent.
 2.  Follow the agent's guidance, starting with `*start .` to analyze the current directory.
 3.  Work through each step (`*analyze`, `*design-toc`, `*plan-content`, `*finalize-plan`, `*generate-all-chapters`) to create your PRD.
+4.  Use `*status` at any time to see the current `status`, `nextStep`, and artifact locations from `fireprd/cache/workflow-state.yaml`.
+5.  If you need to tune chapter splitting, run `*set split-threshold <n>` (default is 5) before `*finalize-plan`.
+6.  To start fresh, run `*reset` (soft reset clears cache only). For a full cleanup, run `*reset --hard` to also delete generated outputs. Both require confirmation.
 
 ---
 
