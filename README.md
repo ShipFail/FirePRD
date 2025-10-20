@@ -68,3 +68,12 @@ In your IDE's AI chat panel:
 ---
 
 **Ready to start?** Type `/fireprd` in your IDE's AI chat and follow the interactive workflow!
+
+## Authors
+
+- Huan Li ([@huan](https://github.com/huan))
+- Shipfail Team ([@shipfail](https://github.com/shipfail))
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details
