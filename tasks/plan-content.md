@@ -6,7 +6,7 @@ To generate a concise, 1-2 sentence summary for each chapter defined in `toc.md`
 ## Process
 
 1.  **Read Artifacts:**
-    * Read the `fireprd/cache/workflow-state.yaml` file to find the file paths for `toc.md` and `code-analysis.md`.
+    * Read the `fireprd/cache/workflow-state.toml` file to find the file paths for `toc.md` and `code-analysis.md`.
     * Load and parse both of these artifact files.
 
 2.  **Initialize Output:**
@@ -24,7 +24,7 @@ To generate a concise, 1-2 sentence summary for each chapter defined in `toc.md`
     * Save the content to a new file at `fireprd/cache/content-plan.md`.
 
 5.  **Update State:**
-    * Update the `fireprd/cache/workflow-state.yaml` file with the following changes:
-        * Set `status` to `CONTENT_PLAN_COMPLETE`.
+    * Update the `fireprd/cache/workflow-state.toml` file with the following changes:
+        * Set `status` to `"CONTENT_PLAN_COMPLETE"`.
         * Set `artifacts.contentPlan` to the path of the newly created `content-plan.md` file.
-        * Set `nextStep` to `finalize-plan`.
+        * Set `nextStep` to `"finalize-plan"`.

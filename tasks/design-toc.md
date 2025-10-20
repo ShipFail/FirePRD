@@ -6,7 +6,7 @@ To collaborate with the user to create and approve a Table of Contents (TOC) for
 ## Process
 
 1.  **Read Artifacts:**
-    * Read the `fireprd/cache/workflow-state.yaml` file to find the path to the `code-analysis.md` artifact.
+    * Read the `fireprd/cache/workflow-state.toml` file to find the path to the `code-analysis.md` artifact.
     * Read the `code-analysis.md` file and parse its "Inferred Features" and "Inferred User Journeys" sections.
 
 2.  **Generate Initial Proposal:**
@@ -25,7 +25,7 @@ To collaborate with the user to create and approve a Table of Contents (TOC) for
     * Once the loop is exited, save the final, approved TOC as a new file at `fireprd/cache/toc.md`.
 
 5.  **Update State:**
-    * Update the `fireprd/cache/workflow-state.yaml` file with the following changes:
-        * Set `status` to `TOC_APPROVED`.
+    * Update the `fireprd/cache/workflow-state.toml` file with the following changes:
+        * Set `status` to `"TOC_APPROVED"`.
         * Set `artifacts.toc` to the path of the newly created `toc.md` file.
-        * Set `nextStep` to `plan-content`.
+        * Set `nextStep` to `"plan-content"`.
