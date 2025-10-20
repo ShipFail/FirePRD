@@ -87,7 +87,7 @@ In your IDE's AI chat panel:
 ## Authors
 
 - Huan Li ([@huan](https://github.com/huan))
-- Shipfail Team ([@shipfail](https://github.com/shipfail))
+- Gemini & ChatGPT & Copilot - Shipfail Team ([@shipfail](https://github.com/shipfail))
 
 ## License
 
