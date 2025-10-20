@@ -15,7 +15,7 @@ YAML's whitespace-sensitive syntax proved fragile for AI agent editing. Multiple
   - `agents/code-analyst.md`: Converted to TOML
   - `agents/prd-writer.md`: Converted to TOML
 - **Key syntax changes:**
-  - `commands:` array → `[[commands]]` array-of-tables
+  - `commands:` array → `[commands]` table with key-value pairs
   - `core_principles:` nested list → flat array of strings
   - Reference changed from `workflow-state.yaml` → `workflow-state.toml`
 
