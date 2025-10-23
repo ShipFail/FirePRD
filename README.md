@@ -1,6 +1,6 @@
 # 🔥 FirePRD: Turn Your Code into a PRD, Instantly.
 
-<p align="center"><img src="./fireprd-logo.webp" width="256" alt="FirePRD Logo" /></p>
+<p align="center"><img src="./docs/fireprd-logo.webp" width="256" alt="FirePRD Logo" /></p>
 
 
 **FirePRD is an agent-driven framework that analyzes your codebase and collaborates with you to generate a human-centered Product Requirements Document (PRD).**

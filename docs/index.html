@@ -3,74 +3,245 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FirePRD — AI-powered, product-first documentation system that ignites your product vision from real code." />
-  <title>FirePRD — Ignite Your Product Vision</title>
+  <meta name="description" content="Generate a human-centered PRD from your repo. FirePRD runs in your AI-enabled IDE. Solo devs and founders ship docs fast." />
+  <title>FirePRD — Turn Your Code into a PRD in Minutes</title>
+  <meta property="og:title" content="FirePRD — Turn Your Code into a PRD in Minutes" />
+  <meta property="og:description" content="Generate a human-centered PRD from your repo. FirePRD runs in your AI-enabled IDE. Solo devs and founders ship docs fast." />
+  <meta property="og:image" content="./fireprd-logo.webp" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://shipfail.github.io/fire-prd/" />
+  <link rel="preload" as="image" href="./fireprd-logo.webp" />
+  <link rel="preload" as="image" href="./demo-videos/demo.poster.webp" />
+  <link rel="preload" as="video" href="./demo-videos/demo.mp4" type="video/mp4" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Accessible skip link & focus styles */
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;background:#fff;color:#c2410c;border-radius:.5rem;box-shadow:0 0 0 2px #fff,0 0 0 4px #fb923c;z-index:50}
+    a:focus-visible, button:focus-visible{outline:2px solid #ea580c;outline-offset:2px}
+  </style>
 </head>
 <body class="bg-gradient-to-br from-orange-50 via-white to-yellow-50 text-gray-800">
+  <a href="#main" class="skip-link">Skip to content</a>
   <!-- Header -->
-  <header class="flex items-center justify-between px-8 py-6 border-b border-orange-100">
-    <h1 class="text-2xl font-bold text-orange-600">🔥 FirePRD</h1>
-    <nav class="hidden md:flex space-x-6 text-gray-700">
-      <a href="#features" class="hover:text-orange-600">Features</a>
+  <header class="flex items-center justify-between px-6 md:px-8 py-5 border-b border-orange-100 bg-white/60 backdrop-blur">
+    <a href="#" class="flex items-center space-x-3 group" aria-label="FirePRD home">
+      <img src="./fireprd-logo.webp" alt="FirePRD logo" class="h-9 w-9 rounded-sm ring-1 ring-orange-200" width="36" height="36" />
+      <span class="text-xl md:text-2xl font-extrabold tracking-tight text-gray-900 group-hover:text-orange-700">FirePRD</span>
+    </a>
+    <nav class="hidden md:flex items-center space-x-6 text-gray-700">
+      <a href="#demo" class="hover:text-orange-600">Demo</a>
+      <a href="#quickstart" class="hover:text-orange-600">Quickstart</a>
+      <a href="#benefits" class="hover:text-orange-600">Benefits</a>
       <a href="#how-it-works" class="hover:text-orange-600">How It Works</a>
-      <a href="#cta" class="hover:text-orange-600">Get Started</a>
+      <a href="#faq" class="hover:text-orange-600">FAQ</a>
     </nav>
-    <a href="https://github.com/fireprd" class="px-4 py-2 rounded-lg bg-orange-600 text-white font-semibold hover:bg-orange-500">GitHub</a>
+    <a href="https://github.com/ShipFail/fire-prd" aria-label="Get FirePRD on GitHub" class="px-4 py-2 rounded-lg bg-orange-600 text-white font-semibold hover:bg-orange-500 shadow-sm">Get it on GitHub</a>
   </header>
 
   <!-- Hero Section -->
-  <section class="text-center py-24 px-6 md:px-20">
-    <h2 class="text-5xl font-extrabold text-gray-900 leading-tight mb-6">Ignite Your Product Vision.</h2>
-    <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-10">FirePRD turns your <strong>final application code</strong> into a clear, human-centered <strong>Product Requirements Document</strong>. No technical jargon — just product stories, user journeys, and design intent. Powered by AI, shaped for humans.</p>
-    <div class="flex justify-center space-x-4">
-      <a href="#cta" class="px-6 py-3 text-lg bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-500 shadow-lg">Get Started</a>
-      <a href="https://github.com/fireprd" class="px-6 py-3 text-lg border border-orange-400 text-orange-600 rounded-xl font-semibold hover:bg-orange-50">View on GitHub</a>
+  <section id="main" class="py-20 md:py-24 px-6 md:px-20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+      <div class="text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">Turn your code into a PRD in minutes.</h1>
+        <p class="max-w-3xl md:max-w-xl mx-auto md:mx-0 text-lg text-gray-700 mb-10">FirePRD reads your repo and drafts a human-centered Product Requirements Document—so you can ship updates, pitch investors, and onboard faster. Runs in your AI-enabled IDE.</p>
+        <div class="flex flex-col sm:flex-row md:justify-start justify-center gap-3 sm:gap-4">
+          <a href="https://github.com/ShipFail/fire-prd" class="px-6 py-3 text-lg bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-500 shadow-lg">Get it on GitHub</a>
+          <a href="#demo" class="px-6 py-3 text-lg border border-orange-400 text-orange-700 rounded-xl font-semibold hover:bg-orange-50">See how it works</a>
+        </div>
+      </div>
+      <div class="relative">
+        <video id="heroVideo" class="w-full rounded-2xl shadow-lg ring-1 ring-orange-200" src="./demo-videos/demo.mp4" muted autoplay loop playsinline poster="./demo.poster.webp" aria-label="FirePRD demo: from code to PRD"></video>
+        <button id="muteToggle" type="button" aria-controls="heroVideo" aria-pressed="false" class="absolute bottom-3 right-3 px-3 py-1.5 rounded-md bg-black/60 text-white text-sm font-medium backdrop-blur hover:bg-black/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">Unmute</button>
+      </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section id="features" class="py-20 bg-white border-t border-orange-100">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
-      <div class="p-6 bg-orange-50 rounded-2xl shadow-sm hover:shadow-md">
-        <h3 class="text-xl font-semibold mb-3 text-orange-700">🔥 Product-First</h3>
-        <p class="text-gray-600">FirePRD focuses on user experience, flow, and product storytelling — not implementation details. It’s the doc your PMs and designers actually read.</p>
+  <!-- Demo: Code → PRD Side-by-Side -->
+  <section id="demo" class="py-8 md:py-10 px-6 md:px-10">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 items-stretch">
+      <div class="rounded-2xl bg-gray-900 text-gray-100 p-4 shadow-lg ring-1 ring-gray-800">
+        <div class="text-xs uppercase tracking-wider text-orange-300 mb-2">Source code (example)</div>
+        <pre class="text-sm overflow-auto"><code>// app/routes/tasks.tsx
+export function createTask(title: string) {
+  return db.task.create({ data: { title, status: 'open' } })
+}
+
+export function listOpenTasks() {
+  return db.task.findMany({ where: { status: 'open' } })
+}
+
+// UI: Add Task → Validates → Persists → Updates list
+</code></pre>
       </div>
-      <div class="p-6 bg-orange-50 rounded-2xl shadow-sm hover:shadow-md">
-        <h3 class="text-xl font-semibold mb-3 text-orange-700">⚡ Code-as-Source</h3>
-        <p class="text-gray-600">Generate PRDs directly from your live application codebase. FirePRD analyzes the final product to describe what users see and feel.</p>
+      <div class="rounded-2xl bg-white p-4 shadow-lg ring-1 ring-orange-200">
+        <div class="text-xs uppercase tracking-wider text-orange-600 mb-2">Generated PRD (excerpt)</div>
+        <div class="prose max-w-none">
+          <h3 class="text-lg font-semibold">Chapter: Task Management</h3>
+          <p class="text-gray-700">Enable users to add and track tasks quickly without friction. Focus on speed-to-entry and clarity of state.</p>
+          <ul class="list-disc pl-5 text-gray-700">
+            <li><strong>Desired Experience:</strong> Add task → see it appear instantly at the top of the list.</li>
+            <li><strong>Acceptance Criteria:</strong> Creating a valid task updates the list without a full refresh.</li>
+          </ul>
+        </div>
       </div>
-      <div class="p-6 bg-orange-50 rounded-2xl shadow-sm hover:shadow-md">
-        <h3 class="text-xl font-semibold mb-3 text-orange-700">🤖 AI-Assisted Workflow</h3>
-        <p class="text-gray-600">Leverage LLMs like Claude and Gemini to produce clean, structured PRDs automatically — consistent, modular, and editable.</p>
+    </div>
+    
+    <p class="text-center text-sm text-gray-500 mt-4">Demo illustration. <a href="./SAMPLE_PRD.md" class="text-orange-700 font-semibold hover:underline">View a sample PRD →</a> · <a href="https://github.com/ShipFail/fire-prd/blob/main/TUTORIAL.md" class="text-orange-700 font-semibold hover:underline">See the tutorial →</a></p>
+  </section>
+
+  <!-- Quickstart -->
+  <section id="quickstart" class="py-16 bg-white border-t border-orange-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">Quickstart for solo devs</h2>
+      <ol class="grid md:grid-cols-3 gap-6 text-gray-700">
+        <li class="p-5 rounded-xl bg-orange-50 ring-1 ring-orange-100"><span class="font-semibold text-orange-700">1) Copy</span> the <code>fireprd/</code> folder into your repo.</li>
+        <li class="p-5 rounded-xl bg-orange-50 ring-1 ring-orange-100"><span class="font-semibold text-orange-700">2) Register</span> <code>/fireprd</code> in your AI-enabled IDE (Claude, Cursor, VS Code AI).</li>
+        <li class="p-5 rounded-xl bg-orange-50 ring-1 ring-orange-100"><span class="font-semibold text-orange-700">3) Run</span> <code>*start .</code> → <code>*analyze</code> → <code>*design-toc</code>.</li>
+      </ol>
+      <p class="mt-4 text-sm text-gray-500">Works with: Claude • Cursor • VS Code AI</p>
+    </div>
+  </section>
+
+  <!-- Benefits (ICP outcomes) -->
+  <section id="benefits" class="py-16 bg-gradient-to-b from-white to-orange-50">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-6">
+      <div class="p-6 bg-white rounded-2xl shadow-sm ring-1 ring-orange-100">
+        <h3 class="text-lg font-semibold mb-2 text-orange-700">Ship in <span class="whitespace-nowrap">&lt; 30 min</span></h3>
+        <p class="text-gray-600">From repo to investor-ready PRD fast.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-sm ring-1 ring-orange-100">
+        <h3 class="text-lg font-semibold mb-2 text-orange-700">Always accurate</h3>
+        <p class="text-gray-600">Derived from your live codebase.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-sm ring-1 ring-orange-100">
+        <h3 class="text-lg font-semibold mb-2 text-orange-700">Product‑first writing</h3>
+        <p class="text-gray-600">Docs teammates actually read.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow-sm ring-1 ring-orange-100">
+        <h3 class="text-lg font-semibold mb-2 text-orange-700">You stay in control</h3>
+        <p class="text-gray-600">Approve TOC, plan, and generation steps.</p>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section id="how-it-works" class="py-24 bg-gradient-to-b from-white to-orange-50">
+  <section id="how-it-works" class="py-20 bg-gradient-to-b from-white to-orange-50">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-gray-900 mb-12">How FirePRD Works</h2>
-      <ol class="space-y-8 text-left max-w-3xl mx-auto">
-        <li><span class="font-semibold text-orange-600">1. Scan Your Codebase</span> — FirePRD reads the application code and infers features, flows, and user-facing components.</li>
-        <li><span class="font-semibold text-orange-600">2. Generate a Hybrid Docs Skeleton</span> — A 2-layer PRD structure (Parts → Chapters) that auto-splits into 3-layer (Sections) for long files.</li>
-        <li><span class="font-semibold text-orange-600">3. Human-Readable Outputs</span> — Creates markdown docs like <code>Vision.md</code>, <code>Personas.md</code>, <code>Experience-Design.md</code> — focused entirely on UX and product intent.</li>
-        <li><span class="font-semibold text-orange-600">4. Continuous Updates</span> — Re-run anytime to regenerate updated sections as the product evolves, keeping your docs fresh and aligned.</li>
+      <h2 class="text-3xl font-bold text-gray-900 mb-10">How it works</h2>
+      <ol class="space-y-6 text-left max-w-3xl mx-auto">
+        <li><span class="font-semibold text-orange-600">1) Activate</span> — Open your IDE’s AI chat and type <code>/fireprd</code>.</li>
+        <li><span class="font-semibold text-orange-600">2) Analyze</span> — Run <code>*start .</code> then <code>*analyze</code>. We read your repo once and cache the results.</li>
+        <li><span class="font-semibold text-orange-600">3) Approve & Generate</span> — Approve the TOC and plan, then generate all chapters.</li>
       </ol>
     </div>
   </section>
 
+  <!-- Social Proof (mocked) -->
+  <section id="social-proof" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="p-6 rounded-2xl bg-orange-50 ring-1 ring-orange-100">
+          <div class="text-2xl font-bold text-orange-700">⭐️ 1.2k+</div>
+          <div class="text-gray-600">GitHub stars (mock)</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-orange-50 ring-1 ring-orange-100">
+          <div class="text-2xl font-bold text-orange-700">5,000+</div>
+          <div class="text-gray-600">PRD files generated (mock)</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-orange-50 ring-1 ring-orange-100">
+          <div class="text-2xl font-bold text-orange-700">200+</div>
+          <div class="text-gray-600">Indie projects (mock)</div>
+        </div>
+      </div>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <blockquote class="p-6 bg-white rounded-2xl shadow-sm ring-1 ring-gray-200 text-left">
+          <p class="text-gray-800">“We shipped an investor-ready PRD this afternoon.”</p>
+          <footer class="mt-2 text-sm text-gray-500">— Indie SaaS Founder (mock)</footer>
+        </blockquote>
+        <blockquote class="p-6 bg-white rounded-2xl shadow-sm ring-1 ring-gray-200 text-left">
+          <p class="text-gray-800">“Onboarded a new dev in a day instead of a week.”</p>
+          <footer class="mt-2 text-sm text-gray-500">— Solo Developer (mock)</footer>
+        </blockquote>
+      </div>
+      <div class="text-center mt-8 space-x-6">
+        <a href="./SAMPLE_PRD.md" class="text-orange-700 font-semibold hover:underline">View a sample PRD →</a>
+        <a href="https://github.com/ShipFail/fire-prd/blob/main/TUTORIAL.md" class="text-orange-700 font-semibold hover:underline">Browse the tutorial →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Not for you strip -->
+  <section class="py-6 bg-orange-100 text-center">
+    <p class="text-sm text-orange-900">Not for you if you don’t use an AI-enabled IDE, or if you need low-level code docs. FirePRD is product-first.</p>
+  </section>
+
   <!-- CTA -->
-  <section id="cta" class="text-center py-20 bg-orange-600 text-white">
-    <h2 class="text-4xl font-bold mb-6">Bring Your Product to Life with FirePRD</h2>
-    <p class="max-w-2xl mx-auto mb-10 text-orange-100 text-lg">From source code to human story — FirePRD transforms your app into a beautifully structured PRD that everyone can understand and love.</p>
-    <a href="https://github.com/fireprd" class="px-8 py-4 bg-white text-orange-700 font-semibold rounded-xl shadow-lg hover:bg-orange-50">Get Started on GitHub</a>
+  <section id="cta" class="text-center py-16 bg-orange-600 text-white">
+    <h2 class="text-3xl font-bold mb-4">Get FirePRD on GitHub</h2>
+    <p class="max-w-2xl mx-auto mb-8 text-orange-100 text-lg">No plugins required—pure prompts that run in your AI-enabled IDE.</p>
+    <a href="https://github.com/ShipFail/fire-prd" class="px-8 py-4 bg-white text-orange-700 font-semibold rounded-xl shadow-lg hover:bg-orange-50">Get it on GitHub</a>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">FAQ</h2>
+      <div class="space-y-6 text-gray-800">
+        <div>
+          <h3 class="font-semibold text-orange-700">How accurate is it?</h3>
+          <p class="text-gray-700">We read your repo and you approve every step—TOC, plan, and generation—so output stays aligned.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-orange-700">Which IDEs and models?</h3>
+          <p class="text-gray-700">Any AI-enabled IDE (e.g., Cursor, VS Code AI). Works great with Claude and Gemini.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-orange-700">Will it leak code?</h3>
+          <p class="text-gray-700">FirePRD runs locally in your IDE; you control the model and data policies.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-orange-700">Can I customize the doc structure?</h3>
+          <p class="text-gray-700">Yes—edit and approve the TOC and plan before generation. You’re in control.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer class="text-center py-10 text-gray-500 text-sm border-t border-orange-100">
     <p>© 2025 FirePRD. Crafted with 🔥 by PreAngel.</p>
   </footer>
+  
+  <!-- Hero video controls -->
+  <script>
+    (function(){
+      const v = document.getElementById('heroVideo');
+      const btn = document.getElementById('muteToggle');
+      if(!v || !btn) return;
+      function update(){
+        btn.textContent = v.muted ? 'Unmute' : 'Mute';
+        btn.setAttribute('aria-pressed', String(!v.muted));
+        btn.title = v.muted ? 'Turn sound on' : 'Turn sound off';
+      }
+      btn.addEventListener('click', function(){
+        v.muted = !v.muted;
+        if(!v.muted){
+          try { v.volume = 1.0; v.play(); } catch(e) {}
+        }
+        update();
+      });
+      v.addEventListener('loadeddata', update);
+      v.addEventListener('volumechange', update);
+      update();
+    })();
+  </script>
+
+  <!-- Sticky mobile CTA -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 border-t border-orange-200 p-3 flex items-center justify-center shadow-lg">
+    <a href="https://github.com/ShipFail/fire-prd" class="w-full max-w-sm text-center px-5 py-3 bg-orange-600 text-white font-semibold rounded-xl hover:bg-orange-500">Get it on GitHub</a>
+  </div>
 </body>
 </html>
